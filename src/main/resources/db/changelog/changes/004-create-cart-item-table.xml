@@ -1,0 +1,33 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.17.xsd">
+
+    <changeSet id="004-create-cart-item-table" author="checkout">
+
+        <createTable tableName="cart_item">
+
+            <column name="id" type="UUID">
+                <constraints primaryKey="true"
+                             nullable="false"
+                             primaryKeyName="pk_cart_item"/>
+            </column>
+
+            <column name="cart_id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="product_code" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="quantity" type="INT">
+                <constraints nullable="false"/>
+            </column>
+
+        </createTable>
+
+    </changeSet>
+
+</databaseChangeLog>

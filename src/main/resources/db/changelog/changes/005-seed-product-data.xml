@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.17.xsd">
+
+    <changeSet id="005-seed-product-data" author="checkout">
+
+        <insert tableName="product">
+            <column name="id" valueComputed="random_uuid()"/>
+            <column name="code" value="APPLE"/>
+            <column name="name" value="Apple"/>
+            <column name="unit" value="piece"/>
+            <column name="unit_price" valueNumeric="0.30"/>
+        </insert>
+
+        <insert tableName="product">
+            <column name="id" valueComputed="random_uuid()"/>
+            <column name="code" value="AVOCADO"/>
+            <column name="name" value="Avocado"/>
+            <column name="unit" value="piece"/>
+            <column name="unit_price" valueNumeric="1.50"/>
+        </insert>
+
+        <insert tableName="product">
+            <column name="id" valueComputed="random_uuid()"/>
+            <column name="code" value="MILK"/>
+            <column name="name" value="Milk"/>
+            <column name="unit" value="piece"/>
+            <column name="unit_price" valueNumeric="1.20"/>
+        </insert>
+
+        <insert tableName="product">
+            <column name="id" valueComputed="random_uuid()"/>
+            <column name="code" value="ORANGE"/>
+            <column name="name" value="Orange"/>
+            <column name="unit" value="piece"/>
+            <column name="unit_price" valueNumeric="0.35"/>
+        </insert>
+
+        <insert tableName="product">
+            <column name="id" valueComputed="random_uuid()"/>
+            <column name="code" value="YOGURT"/>
+            <column name="name" value="Yogurt"/>
+            <column name="unit" value="cup"/>
+            <column name="unit_price" valueNumeric="0.80"/>
+        </insert>
+
+        <insert tableName="product">
+            <column name="id" valueComputed="random_uuid()"/>
+            <column name="code" value="CHEESE"/>
+            <column name="name" value="Cheese"/>
+            <column name="unit" value="pack"/>
+            <column name="unit_price" valueNumeric="2.50"/>
+        </insert>
+
+        <insert tableName="product">
+            <column name="id" valueComputed="random_uuid()"/>
+            <column name="code" value="BROCCOLI"/>
+            <column name="name" value="Broccoli"/>
+            <column name="unit" value="piece"/>
+            <column name="unit_price" valueNumeric="1.49"/>
+        </insert>
+
+    </changeSet>
+
+</databaseChangeLog>

@@ -16,7 +16,7 @@ The API supports:
 
 ## Base Path
 
-`/api`
+`/api/v1`
 
 ---
 
@@ -58,7 +58,8 @@ Example:
   "id": "ee8bc32d-bf4e-4a89-ac8d-cb2b9b77f76a",
   "productCode": "APPLE",
   "quantity": 2,
-  "bundlePrice": 0.45
+  "bundlePrice": 0.45,
+  "description": "2 for €0.45"
 }
 ```
 
@@ -92,7 +93,7 @@ Example:
 Full product list with embedded active offer
 
 ```
-GET /api/products
+GET /api/v1/products
 ```
 
 **Response**
@@ -131,7 +132,7 @@ All active offers as a standalone list
 **Request**
 
 ```
-GET /api/offers
+GET /api/v1/offers
 ```
 
 **Response**
@@ -154,7 +155,7 @@ GET /api/offers
 **Request**
 
 ```
-POST /api/carts
+POST /api/v1/carts
 ```
 
 **Response**
@@ -174,7 +175,7 @@ POST /api/carts
 **Request**
 
 ```
-GET /api/carts/{cartId}
+GET /api/v1/carts/{cartId}
 ```
 
 **Response**
@@ -214,7 +215,7 @@ GET /api/carts/{cartId}
 **Request**
 
 ```
-POST /api/carts/{cartId}/items
+POST /api/v1/carts/{cartId}/items
 ```
 
 **Body**
@@ -233,7 +234,7 @@ POST /api/carts/{cartId}/items
 **Request**
 
 ```
-PUT /api/carts/{cartId}/items/{productCode}
+PUT /api/v1/carts/{cartId}/items/{productCode}
 ```
 
 **Body**
@@ -251,7 +252,7 @@ PUT /api/carts/{cartId}/items/{productCode}
 **Request**
 
 ```
-DELETE /api/carts/{cartId}/items/{productCode}
+DELETE /api/v1/carts/{cartId}/items/{productCode}
 ```
 
 **Response**
@@ -267,7 +268,7 @@ DELETE /api/carts/{cartId}/items/{productCode}
 **Request**
 
 ```
-POST /api/carts/{cartId}/checkout
+POST /api/v1/carts/{cartId}/checkout
 ```
 
 **Response**

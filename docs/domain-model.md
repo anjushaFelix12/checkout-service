@@ -42,6 +42,8 @@ Fields:
 - `product_id` (FK → products.id)
 - `quantity`
 - `bundle_price`
+- `created_at`
+- `valid_until`
 
 Example:
 
