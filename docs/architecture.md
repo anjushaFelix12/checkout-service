@@ -86,6 +86,8 @@ checkout
 
 pricing
   service
+  dto
+  rule
 
 common
   config
@@ -183,6 +185,23 @@ Responsibilities:
 
 Separating pricing logic improves **testability and maintainability**.
 
+#### Open / Closed Principle
+
+The pricing engine follows the **Open/Closed Principle**:
+
+> Software entities should be **open for extension but closed for modification**.
+
+New pricing rules can be added without modifying existing code.
+
+For example, new rules could be implemented such as:
+
+- Buy X Get Y Free
+- Percentage discounts
+- Member discounts
+- Seasonal promotions
+
+To introduce a new rule, simply create a new implementation of `PricingRule`:
+
 ---
 
 ## Request Flow Example (Checkout)
@@ -225,6 +244,27 @@ The API exposes **DTOs rather than database entities** to avoid leaking persiste
 ### Monetary Calculations
 
 All monetary values are represented using **BigDecimal** to avoid floating-point precision issues.
+
+#### Algorithm Used
+
+The algorithm works like this:
+
+```
+bundleCount = quantity / offerQuantity
+remainder   = quantity % offerQuantity
+
+```
+
+Then calculate:
+
+```
+bundleTotal   = bundleCount × bundlePrice
+remainderCost = remainder × unitPrice
+
+total = bundleTotal + remainderCost
+```
+
+
 
 ---
 

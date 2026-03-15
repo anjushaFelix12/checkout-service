@@ -6,7 +6,6 @@ import com.backend.checkout_service.cart.domain.CartStatus;
 import com.backend.checkout_service.cart.dto.CartResponse;
 import com.backend.checkout_service.cart.exception.CartItemNotFoundException;
 import com.backend.checkout_service.cart.exception.CartNotFoundException;
-import com.backend.checkout_service.cart.exception.InvalidCartItemException;
 import com.backend.checkout_service.cart.exception.InvalidCartStateException;
 import com.backend.checkout_service.cart.repository.CartItemRepository;
 import com.backend.checkout_service.cart.repository.CartRepository;
