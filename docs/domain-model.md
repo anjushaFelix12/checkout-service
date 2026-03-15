@@ -19,9 +19,10 @@ Represents a purchasable item in the product catalog.
 Fields:
 
 - `id` (PK)
-- `code`
-- `name`
-- `unit_price`
+- `code` (unique, not null)
+- `name` (not null)
+- `unit`
+- `unit_price` (not null)
 
 Example:
 
@@ -40,10 +41,11 @@ Fields:
 
 - `id` (PK)
 - `product_id` (FK → products.id)
-- `quantity`
-- `bundle_price`
+- `quantity` (not null, > 0)
+- `bundle_price` (not null)
+- `valid_from` (not null)
+- `valid_until` (not null)
 - `created_at`
-- `valid_until`
 
 Example:
 
@@ -69,7 +71,7 @@ Represents a shopping cart created by a user/session.
 Fields:
 
 - `id` (PK)
-- `status`
+- `status` (OPEN, CHECKED_OUT, ABANDONED)
 - `created_at`
 - `updated_at`
 

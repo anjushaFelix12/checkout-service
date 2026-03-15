@@ -29,6 +29,12 @@ Project documentation is available in the `docs/` directory:
 
 ---
 
+# 📖 Swagger UI
+
+API documentation available at: http://localhost:8080/swagger-ui/index.html
+
+---
+
 # Running the Project
 
 `mvn spring-boot:run`

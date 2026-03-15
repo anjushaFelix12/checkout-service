@@ -1,10 +1,14 @@
 package com.backend.checkout_service.product.domain;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.math.BigDecimal;
 import java.util.UUID;
 
+@Getter
+@Setter
 @Entity
 @Table(
         name = "product",
@@ -29,7 +33,7 @@ public class Product {
     @Column(name = "unit_price", nullable = false, precision = 10, scale = 2)
     private BigDecimal unitPrice;
 
-    protected Product() {
+    public Product() {
     }
 
     public Product(UUID id, String code, String name, String unit, BigDecimal unitPrice) {
@@ -40,23 +44,4 @@ public class Product {
         this.unitPrice = unitPrice;
     }
 
-    public UUID getId() {
-        return id;
-    }
-
-    public String getCode() {
-        return code;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getUnit() {
-        return unit;
-    }
-
-    public BigDecimal getUnitPrice() {
-        return unitPrice;
-    }
 }

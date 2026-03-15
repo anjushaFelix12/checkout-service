@@ -5,6 +5,7 @@ import com.backend.checkout_service.offer.repository.OfferRepository;
 import com.backend.checkout_service.product.domain.Product;
 import com.backend.checkout_service.product.dto.ActiveOffer;
 import com.backend.checkout_service.product.dto.ProductResponse;
+import com.backend.checkout_service.product.exception.InvalidProductException;
 import com.backend.checkout_service.product.repository.ProductRepository;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -34,13 +35,13 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public List<ProductResponse> getAllProducts(int offset, int limit) {
         if (limit <= 0) {
-            throw new IllegalArgumentException("Limit must be greater than zero");
+            throw new InvalidProductException("Limit must be greater than zero");
         }
         if (offset < 0) {
-            throw new IllegalArgumentException("Offset must not be negative");
+            throw new InvalidProductException("Offset must not be negative");
         }
         if (offset % limit != 0) {
-            throw new IllegalArgumentException("Offset must be a multiple of limit");
+            throw new InvalidProductException("Offset must be a multiple of limit");
         }
 
         Pageable pageable = PageRequest.of(offset / limit, limit);

@@ -65,7 +65,8 @@ public class OfferServiceImpl implements OfferService {
                 request.quantity(),
                 request.bundlePrice(),
                 now,
-                now.plus(7, ChronoUnit.DAYS)
+                now.plus(7, ChronoUnit.DAYS),
+                now
         );
 
         Offer savedOffer = offerRepository.save(offer);
@@ -108,6 +109,7 @@ public class OfferServiceImpl implements OfferService {
 
     private ActiveOfferResponse mapToResponse(Offer offer) {
         return new ActiveOfferResponse(
+                offer.getId(),
                 offer.getProduct().getCode(),
                 offer.getQuantity(),
                 offer.getBundlePrice(),
@@ -118,6 +120,7 @@ public class OfferServiceImpl implements OfferService {
 
     private ActiveOfferResponse mapToResponse(Offer offer, String productCode) {
         return new ActiveOfferResponse(
+                offer.getId(),
                 productCode,
                 offer.getQuantity(),
                 offer.getBundlePrice(),

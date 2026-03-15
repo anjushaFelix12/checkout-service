@@ -18,15 +18,25 @@
                 <constraints nullable="false"/>
             </column>
 
-            <column name="product_code" type="VARCHAR(50)">
-                <constraints nullable="false"/>
+            <column name="product_id" type="UUID">
+                <constraints nullable="false"
+                             foreignKeyName="fk_cart_product"
+                             referencedTableName="product"
+                             referencedColumnNames="id"/>
             </column>
 
             <column name="quantity" type="INT">
                 <constraints nullable="false"/>
             </column>
 
+
+
         </createTable>
+
+        <addUniqueConstraint
+                tableName="cart_item"
+                columnNames="cart_id, product_id"
+                constraintName="uk_cart_product"/>
 
     </changeSet>
 

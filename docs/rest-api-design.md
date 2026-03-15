@@ -143,9 +143,45 @@ GET /api/v1/offers
     "id": "ee8bc32d-bf4e-4a89-ac8d-cb2b9b77f76a",
     "productCode": "APPLE",
     "quantity": 2,
-    "bundlePrice": 0.45
+    "bundlePrice": 0.45,
+    "description": "2 for €0.45",
+    "validUntil" : "2026-03-15"
   }
 ]
+```
+
+### Create Active Offers
+
+All active offers as a standalone list
+
+**Request**
+
+```
+POST /api/v1/offers
+```
+
+**Request Body**
+
+```json
+{
+  "productCode": "APPLE",
+  "quantity": 2,
+  "bundlePrice": 0.45
+}
+```
+
+
+**Response**
+
+```json
+{
+    "id": "ee8bc32d-bf4e-4a89-ac8d-cb2b9b77f76a",
+    "productCode": "APPLE",
+    "quantity": 2,
+    "bundlePrice": 0.45,
+    "description": "2 for €0.45",
+    "validUntil" : "2026-03-15"
+}
 ```
 
 ---

@@ -24,11 +24,14 @@ public class Offer {
     @Column(name = "bundle_price", nullable = false, precision = 10, scale = 2)
     private BigDecimal bundlePrice;
 
-    @Column(name = "created_at", nullable = false)
-    private Instant createdAt;
+    @Column(name = "valid_from", nullable = false)
+    private Instant validFrom;
 
     @Column(name = "valid_until", nullable = false)
     private Instant validUntil;
+
+    @Column(name = "created_at", nullable = false)
+    private Instant createdAt;
 
     protected Offer() {
     }
@@ -37,14 +40,16 @@ public class Offer {
                  Product product,
                  Integer quantity,
                  BigDecimal bundlePrice,
-                 Instant createdAt,
-                 Instant validUntil) {
+                 Instant validFrom,
+                 Instant validUntil,
+                 Instant createdAt) {
         this.id = id;
         this.product = product;
         this.quantity = quantity;
         this.bundlePrice = bundlePrice;
-        this.createdAt = createdAt;
+        this.validFrom = validFrom;
         this.validUntil = validUntil;
+        this.createdAt = createdAt;
     }
 
     public UUID getId() {
@@ -65,6 +70,9 @@ public class Offer {
 
     public Instant getCreatedAt() {
         return createdAt;
+    }
+    public Instant getFrom() {
+        return validUntil;
     }
 
     public Instant getValidUntil() {
