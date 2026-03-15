@@ -3,7 +3,6 @@ package com.backend.checkout_service.product.service;
 import com.backend.checkout_service.offer.domain.Offer;
 import com.backend.checkout_service.offer.repository.OfferRepository;
 import com.backend.checkout_service.product.domain.Product;
-import com.backend.checkout_service.product.dto.ActiveOffer;
 import com.backend.checkout_service.product.dto.ProductResponse;
 import com.backend.checkout_service.product.exception.InvalidProductException;
 import com.backend.checkout_service.product.repository.ProductRepository;
@@ -63,9 +62,9 @@ public class ProductServiceImpl implements ProductService {
                 .map(product -> {
                     Offer offer = offerMap.get(product.getId());
 
-                    ActiveOffer activeOffer = null;
+                    ProductResponse.ActiveOffer activeOffer = null;
                     if (offer != null) {
-                        activeOffer = new ActiveOffer(
+                        activeOffer = new ProductResponse.ActiveOffer(
                                 offer.getQuantity(),
                                 offer.getBundlePrice(),
                                 offer.getQuantity() + " for €" + offer.getBundlePrice()

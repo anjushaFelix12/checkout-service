@@ -1,11 +1,9 @@
 package com.backend.checkout_service.product.controller;
 
-import com.backend.checkout_service.product.dto.ActiveOffer;
 import com.backend.checkout_service.product.dto.ProductResponse;
 import com.backend.checkout_service.product.service.ProductService;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -43,7 +41,7 @@ class ProductControllerTest {
                         "Apple",
                         "piece",
                         new BigDecimal("0.30"),
-                        new ActiveOffer(2, new BigDecimal("0.45"), "2 for €0.45")
+                        new ProductResponse.ActiveOffer(2, new BigDecimal("0.45"), "2 for €0.45")
                 ),
                 new ProductResponse(
                         bananaId,

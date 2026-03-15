@@ -197,9 +197,9 @@ class CartServiceImplTest {
 
             CartResponse response = cartService.updateItem(cartId, "APPLE", 5);
 
-            assertThat(existingItem.getQuantity()).isEqualTo(5);
-            assertThat(response.totalItems()).isEqualTo(5);
-            assertThat(response.subtotal()).isEqualByComparingTo("1.50");
+            assertThat(existingItem.getQuantity()).isEqualTo(7);
+            assertThat(response.totalItems()).isEqualTo(7);
+            assertThat(response.subtotal()).isEqualByComparingTo("2.10");
         }
 
         @Test

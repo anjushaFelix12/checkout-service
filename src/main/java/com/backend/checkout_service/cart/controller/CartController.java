@@ -27,23 +27,23 @@ public class CartController {
     }
 
     @GetMapping("/{cartId}")
-    public CartResponse getCart(@PathVariable UUID cartId) {
-        return cartService.getCart(cartId);
+    public ResponseEntity<CartResponse> getCart(@PathVariable UUID cartId) {
+        return ResponseEntity.ok(cartService.getCart(cartId));
     }
 
     @PostMapping("/{cartId}/items")
-    public CartResponse addItem(@PathVariable UUID cartId,
+    public ResponseEntity<CartResponse> addItem(@PathVariable UUID cartId,
                                 @RequestBody AddCartItemRequest request) {
-        return cartService.addItem(cartId, request);
+        return ResponseEntity.ok(cartService.addItem(cartId, request));
     }
 
     @PatchMapping("/{cartId}/items/{productCode}")
-    public CartResponse updateItem(
+    public ResponseEntity<CartResponse> updateItem(
             @PathVariable UUID cartId,
             @PathVariable String productCode,
             @Valid @RequestBody UpdateCartItemRequest request) {
 
-        return cartService.updateItem(cartId, productCode, request.quantity());
+        return ResponseEntity.ok(cartService.updateItem(cartId, productCode, request.quantity()));
     }
 
     @DeleteMapping("/{cartId}/items/{productCode}")

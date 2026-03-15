@@ -155,7 +155,7 @@ public class CartServiceImpl implements CartService {
                     );
                 });
 
-        cartItem.setQuantity(quantity);
+        cartItem.setQuantity(cartItem.getQuantity() + quantity);
         cartItemRepository.save(cartItem);
 
         cart.setUpdatedAt(Instant.now());
@@ -167,7 +167,6 @@ public class CartServiceImpl implements CartService {
     @Override
     @Transactional
     public void removeItem(UUID cartId, String productCode) {
-        log.info("Removing cart item. cartId={}, productCode={}", cartId, productCode);
 
         validateRemoveItemRequest(cartId, productCode);
 
