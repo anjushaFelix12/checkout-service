@@ -155,7 +155,7 @@ public class CartServiceImpl implements CartService {
                     );
                 });
 
-        cartItem.setQuantity(cartItem.getQuantity() + quantity);
+        cartItem.setQuantity(quantity);
         cartItemRepository.save(cartItem);
 
         cart.setUpdatedAt(Instant.now());

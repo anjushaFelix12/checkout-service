@@ -15,7 +15,8 @@ The system automatically applies applicable offers during checkout and calculate
 - Automatic offer application during checkout
 - RESTful API design
 - Layered backend architecture
-- End-to-end flow with Angular frontend
+- Uses Liquibase for database migrations
+- Provides Swagger UI documentation
 
 ---
 

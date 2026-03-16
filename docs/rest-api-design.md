@@ -43,6 +43,7 @@ Example:
   "id": "3c6eb911-dbb1-4f93-9c90-3f7138ff71d0",
   "code": "APPLE",
   "name": "Apple",
+  "unit" : "piece",
   "unitPrice": 0.30
 }
 ```
@@ -59,7 +60,8 @@ Example:
   "productCode": "APPLE",
   "quantity": 2,
   "bundlePrice": 0.45,
-  "description": "2 for €0.45"
+  "description": "2 for €0.45",
+  "validUntil": "2026-03-16T08:33:54.087Z"
 }
 ```
 
@@ -71,14 +73,21 @@ Example:
 
 ```json
 {
-  "id": "c1f7f8e4-5f24-4c9e-a2f2-4fdb0b8c0c7b",
+  "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
   "status": "OPEN",
   "items": [
     {
-      "productCode": "APPLE",
-      "quantity": 3
+      "productCode": "string",
+      "productName": "string",
+      "unit": "string",
+      "unitPrice": 0,
+      "quantity": 0,
+      "lineTotal": 0
     }
-  ]
+  ],
+  "itemCount": 0,
+  "totalItems": 0,
+  "subtotal": 0
 }
 ```
 
@@ -270,7 +279,7 @@ POST /api/v1/carts/{cartId}/items
 **Request**
 
 ```
-PUT /api/v1/carts/{cartId}/items/{productCode}
+PATCH /api/v1/carts/{cartId}/items/{productCode}
 ```
 
 **Body**
